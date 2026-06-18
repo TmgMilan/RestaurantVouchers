@@ -22,7 +22,7 @@ load_dotenv(BASE_DIR / ".env")
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-t&8!8wiy5_r-g(qwoe&=ysu!)5(bg@lh1zmqk3gwkw6v#wdhpr'
+SECRET_KEY = os.getenv('SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -49,9 +49,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -131,8 +131,8 @@ STATIC_URL = 'static/'
 
 
 ## modified or added
-CORS_ALLOW_ORIGINS = [
-    'http://localhost:5173/'
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
 ]
 
 REST_FRAMEWORK = {
@@ -172,3 +172,5 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,  # Issue new refresh token when refreshing
     'AUTH_HEADER_TYPES': ('Bearer',),  # Authorization: Bearer <token>
 }
+
+

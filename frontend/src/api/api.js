@@ -1,6 +1,5 @@
 const BASE_URL = 'http://localhost:8000';
 
-const BASE_URL = 'http://localhost:8000';
 
 async function api(path, options = {}) {
   // Build and send the initial request
