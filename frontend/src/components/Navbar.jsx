@@ -10,16 +10,18 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-200">
-      <Link to="/vouchers" className="text-lg font-semibold text-gray-900 no-underline">
-        Restaurant Vouchers
-      </Link>
-      <button
-        onClick={handleLogout}
-        className="px-4 py-2 text-sm border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50 cursor-pointer"
-      >
-        Logout
-      </button>
+    <nav className="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-stone-200">
+      <div className="max-w-3xl mx-auto px-6 py-3.5 flex items-center justify-between">
+        <Link to="/vouchers" className="flex items-center no-underline">
+          <span className="text-base font-semibold text-stone-900">Restaurant Vouchers</span>
+        </Link>
+        <button
+          onClick={handleLogout}
+          className="px-3.5 py-1.5 text-sm font-medium text-stone-500 rounded-lg hover:bg-stone-100 hover:text-stone-900 transition-colors cursor-pointer"
+        >
+          Logout
+        </button>
+      </div>
     </nav>
   );
 }
