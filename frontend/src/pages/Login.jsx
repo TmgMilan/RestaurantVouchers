@@ -39,9 +39,6 @@ function Login() {
       <div className="w-full max-w-sm">
 
         <div className="flex flex-col items-center mb-6">
-          <span className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-700 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-orange-600/20 mb-3">
-            RV
-          </span>
           <h2 className="text-xl font-semibold text-stone-900">Welcome back</h2>
           <p className="text-sm text-stone-500 mt-1">Sign in to manage your vouchers</p>
         </div>
